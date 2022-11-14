@@ -1,8 +1,8 @@
 package com.mo.inmemoryloginauthentication;
 
-import com.mo.inmemoryloginauthentication.model.Post;
+//import com.mo.inmemoryloginauthentication.model.Post;
 import com.mo.inmemoryloginauthentication.model.User;
-import com.mo.inmemoryloginauthentication.repo.PostRepo;
+//import com.mo.inmemoryloginauthentication.repo.PostRepo;
 import com.mo.inmemoryloginauthentication.repo.UserRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,11 +18,14 @@ public class InMemoryLoginAuthenticationApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(PostRepo posts, UserRepo users, PasswordEncoder encoder) {
+    CommandLineRunner commandLineRunner(/*PostRepo posts, */UserRepo users, PasswordEncoder encoder) {
         return args -> {
-            users.save(new User("user", encoder.encode("${Mo_pass}"),"ROLE_USER"));
-            users.save(new User("admin",encoder.encode("${Mo_pass}"),"ROLE_USER,ROLE_ADMIN"));
-            posts.save( new Post("Hello Mo", "Mo slug", "Welcome to my blog!", "Mo Stacks"));
+//            users.save(new User("user", encoder.encode("${Mo_pass}"),"ROLE_USER"));
+//            users.save(new User("admin",encoder.encode("${Mo_pass}"),"ROLE_USER,ROLE_ADMIN"));
+            users.save(new User("user", encoder.encode("1234"),"ROLE_USER"));
+//            users.save(new User("admin",encoder.encode("5678"),"ROLE_USER,ROLE_ADMIN"));
+
+//            posts.save( new Post("Hello Mo", "Mo slug", "Welcome to my blog!", "Mo Stacks"));
         };
 
     }
