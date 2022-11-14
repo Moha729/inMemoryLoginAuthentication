@@ -24,7 +24,7 @@ public class InMemoryLoginAuthenticationApplication {
             users.save(new User("admin",encoder.encode("${Mo_pass}"),"ROLE_USER,ROLE_ADMIN"));
             posts.save( new Post("Hello Mo", "Mo slug", "Welcome to my blog!", "Mo Stacks"));
         };
-
+//Try again
     }
 
 }
