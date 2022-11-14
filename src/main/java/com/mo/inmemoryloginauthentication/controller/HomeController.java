@@ -10,6 +10,7 @@ public class HomeController {
     @GetMapping
     public String home(){
         return "Hello World";
+        //return "redirect:/api/posts";
     }
 
     @PreAuthorize("hasRole('ROLE_USER')")

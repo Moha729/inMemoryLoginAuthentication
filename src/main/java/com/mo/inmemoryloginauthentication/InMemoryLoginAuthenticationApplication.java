@@ -21,9 +21,10 @@ public class InMemoryLoginAuthenticationApplication {
     @Bean
     CommandLineRunner commandLineRunner(PostRepo posts, UserRepo users, PasswordEncoder encoder) {
         return args -> {
-            //String passwordEnceded = ;
-            users.save(new User("user", encoder.encode("${MO_PASS}"),"ROLE_USER"));
-            users.save(new User("admin",encoder.encode("${MO_PASS}"),"ROLE_USER,ROLE_ADMIN"));
+
+            //String passwordEnceded = users.findAll().get(users.findAll().size()-1).getPassword();
+            users.save(new User("user", encoder.encode(System.getenv("MO_PASS")),"ROLE_USER"));
+            users.save(new User("admin",encoder.encode(System.getenv("MO_PASS2")),"ROLE_USER,ROLE_ADMIN"));
             posts.save( new Post("Hello Mo", "Mo slug", "Welcome to my blog!", "Mo Stacks"));
         };
 
