@@ -1,4 +1,4 @@
-/*
+
 package com.mo.inmemoryloginauthentication.model;
 
 import javax.persistence.*;
@@ -84,4 +84,3 @@ public class Post {
         this.updatedOn = updatedOn;
     }
 }
-*/
