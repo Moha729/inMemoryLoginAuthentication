@@ -1,3 +1,4 @@
+/*
 package com.mo.inmemoryloginauthentication.controller;
 
 import com.mo.inmemoryloginauthentication.model.Post;
@@ -27,3 +28,4 @@ public class PostController {
         return post;
     }
 }
+*/

@@ -16,13 +16,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    private final JpaUserDetailsService jpaUserDetailsService;
+     private final JpaUserDetailsService jpaUserDetailsService;
 
     public SecurityConfig(JpaUserDetailsService jpaUserDetailsService) {
         this.jpaUserDetailsService = jpaUserDetailsService;
     }
 
-    @Bean
+   @Bean
     SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception{
         return http
                 .csrf(csrf -> csrf.ignoringAntMatchers("/h2-console/**"))
