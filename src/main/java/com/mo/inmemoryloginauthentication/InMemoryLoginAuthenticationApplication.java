@@ -17,9 +17,11 @@ public class InMemoryLoginAuthenticationApplication {
         SpringApplication.run(InMemoryLoginAuthenticationApplication.class, args);
     }
 
+
     @Bean
     CommandLineRunner commandLineRunner(PostRepo posts, UserRepo users, PasswordEncoder encoder) {
         return args -> {
+            //String passwordEnceded = ;
             users.save(new User("user", encoder.encode("${MO_PASS}"),"ROLE_USER"));
             users.save(new User("admin",encoder.encode("${MO_PASS}"),"ROLE_USER,ROLE_ADMIN"));
             posts.save( new Post("Hello Mo", "Mo slug", "Welcome to my blog!", "Mo Stacks"));
