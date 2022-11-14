@@ -27,7 +27,7 @@ public class InMemoryLoginAuthenticationApplication {
 
 //            posts.save( new Post("Hello Mo", "Mo slug", "Welcome to my blog!", "Mo Stacks"));
         };
-
+//
     }
 
 }
