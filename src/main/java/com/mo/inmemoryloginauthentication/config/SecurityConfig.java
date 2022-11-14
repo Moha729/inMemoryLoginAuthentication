@@ -1,5 +1,6 @@
 package com.mo.inmemoryloginauthentication.config;
 
+import com.mo.inmemoryloginauthentication.service.JpaUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -15,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-/*     private final JpaUserDetailsService jpaUserDetailsService;
+     private final JpaUserDetailsService jpaUserDetailsService;
 
     public SecurityConfig(JpaUserDetailsService jpaUserDetailsService) {
         this.jpaUserDetailsService = jpaUserDetailsService;
@@ -33,7 +34,7 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions().sameOrigin())
                 .httpBasic(Customizer.withDefaults())
                 .build();
-    }*/
+    }
 
     @Bean
     PasswordEncoder passwordEncoder(){
